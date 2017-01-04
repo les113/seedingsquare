@@ -1,0 +1,427 @@
+@import "compass/css3"; //calls compass mixims
+@import 'variables'; 
+
+h1, h2, h3, h4, h5, h6, .nav {
+    font-family: 'Questrial', sans-serif;
+}
+body {
+    font-family: arial, sans-serif;
+} 
+
+h1 {font-size:$basefontsize*2.5;}
+h2 {font-size:$basefontsize*2; color:$primaryColour}
+h3, h4 {font-size:$basefontsize*1.25;font-weight:600;}
+h5, h6 {font-size:$basefontsize*1;}
+p, li {font-size:$basefontsize*1;color:$fontColour;}
+section li, footer li {
+	list-style-type:none;
+	margin-left:-40px;
+	line-height:150%;
+}
+.text-inverse {
+	color:#fff !important;
+}
+.bold {
+    font-weight: 600;
+}
+.marginTop {
+    margin-top:20px;
+}
+
+
+//logo 
+.navbar img {
+	height:100px;
+	z-index:1; // raise logo
+}
+
+
+/* header ver 1 
+header {
+	h1 {font-size:$basefontsize*4;}
+	p {font-size:$basefontsize*2;}
+}*/
+
+.sect1 {
+    margin-top: 55px;  // push section down for fixed to top menu
+}
+
+
+
+/* navbar*/  
+// http://work.smarchal.com/twbscolor/scss/6ebb46258940fafeffffffff1
+
+$bgDefault      : $primaryColour;
+$bgHighlight    : $emphasisColour;
+$colDefault     : #fff;
+$colHighlight   : #fff;
+$dropDown       : true;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight;
+	  background-color: $bgHighlight;
+	  }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight;
+		  background-color: $bgHighlight;
+		  }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+// end navbar
+
+
+
+/* navbar simplified styling 
+
+.navbar-default, .dropdown-menu {
+    background-color: $primaryColour;
+}
+.navbar-default .navbar-nav>li>a, .dropdown-menu>li>a {
+    color:#fff;    
+}
+.navbar-default .navbar-nav, .dropdown-menu {
+    > .active > a, 
+    > .active > a:hover, 
+    > li > a:hover,
+    > li > a:focus,
+    >.open>a, 
+    >.open>a:focus, 
+    >.open>a:hover
+    {
+    color:#fff;
+	background-color:$emphasisColour;
+    }
+}
+*/
+
+
+// nav 
+.nav li {
+    font-size:$basefontsize*1.2;
+}
+
+
+/** active menu **/
+body#home .nav .home a,
+body#aboutus .nav .aboutus a,
+body#faqs .nav .faqs a,
+body#testimonials .nav .testimonials a,
+{
+    background-color:$emphasisColour;
+}
+
+
+// styles 
+header img {
+	width:100%;
+}
+.headerBtn {
+    position:absolute;
+    top:-100px;
+    width:100%;
+}
+section {
+	padding:10px 0;
+	margin:10px 0;
+}
+.section-primary,  {
+    background-color: $primaryColour !important;
+	h2, p, li, a {
+		color:#fff;
+	}
+}
+.section-secondary {
+    background-color: $secondaryColour;
+		h3, li {
+		color:darken($primaryColour, 10%)​;
+		}
+		h2, a {
+		color:white;
+		}
+}
+
+footer {
+	padding-Top:20px;
+	min-height:240px;
+}
+footer i.fa {
+	color:#fff;
+}
+footer h4 {
+	text-transform: uppercase;
+}
+
+
+.vegbg	{
+	background-image:url("../img/veg-bg.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	h2, a {
+		color:white;
+	}
+}
+.saladbg	{
+	background-image:url("../img/salad-bg.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	h2, a {
+		color:white;
+	}
+}
+
+
+// shadows
+.shdw {
+	box-shadow: $shdw;
+}
+.noshdw {
+	box-shadow: none !important;
+}
+.textshdw {
+	text-shadow: $textshdw;
+}
+
+// steps 123
+.innerPadding {
+	padding:20px 40px;
+}
+    
+// homepage testimonials
+.testimonialBox {
+	padding:10px;
+    margin-bottom: 20px;
+	opacity:0.9;
+}
+.testimonial {
+	background-color:#fff;
+	border:solid 1px #fff;
+	box-shadow: $shdw;
+	min-height:200px;
+	padding:10px;
+	h3 {
+	color:$fontColour;		
+	}
+}
+.testimonialBox:after, .testimonials li:after {
+	background-image: url("../img/quote.png");
+	position:absolute;	
+	background-repeat:no-repeat;
+	content: " ";
+	display:block;
+	width:23px; height:23px;
+	bottom:-12px;left:20px;
+}
+
+// testimonials page
+.testimonials li {
+    position:relative;
+    border:solid 1px $primaryColour;
+    margin-bottom:20px;
+    padding:20px;
+    .testimonial-title {
+        color:$primaryColour;
+    }
+}
+.testimonials li:after {
+  	bottom:-18px;left:20px;      
+    }
+
+    
+// FAQs
+
+.q {	
+	margin: 10px;
+}
+	
+.a {	
+	margin-left: 50px;
+	font-style:italic;
+	list-style-type:none;
+    font-size: $basefontsize*0.9;
+    font-weight:600;
+}
+ul.faq {
+    margin-left: -50px;
+}
+.fa-plus:before {
+    content: "\f067";
+    font-family: fontawesome;
+    background-color: $primaryColour;
+}
+.fa-minus:before {
+    content: "\f068";
+    font-family: fontawesome;
+    background-color: $emphasisColour;
+}	
+.fa-plus:before, .fa-minus:before {
+    color:#fff;
+    margin-right:20px;
+    padding:5px;
+	width:20px;
+	height:20px;
+	@include border-radius(50%);
+}
+
+
+
+
+// download pdfs
+.downloads {
+    float:left;
+}
+.downloads img{
+    width:150px;
+    margin-right:10px;
+}
+    
+    
+/* buttons */
+.btn {
+	@include border-radius(0);
+	box-shadow: $shdw;
+    padding:10px 50px;
+}
+.btn-primary {
+	background-color:$primaryColour;
+	border:none;
+	@include transition(background-color .3s);
+}
+.btn-primary:hover {
+	background-color:white;
+    color:$primaryColour;
+}
+
+
+.buypanel {
+	background-color:$emphasisColour;
+	padding:15px;	
+	box-shadow: $shdw;	
+	h2, p {
+		color:#fff;
+	}
+}
+
+.paypal img {
+    width:100%;
+    max-width:290px;
+}
+
+
+// lamtha2
+.designedBy {
+	background-image: url(../img/designedbysprite.jpg);
+	background-position:0 0;
+	width:89px;
+	height:29px;
+	float:left;
+	background-repeat:no-repeat;
+	overflow:hidden;
+	margin:20px 0;
+}
+.designedBy:hover{
+	background-image: url(../img/designedbysprite.jpg);
+	background-position:0 -29px;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-collapse {
+		border: none;
+		margin-top: 70px;
+	}	
+	.col-xs-center  {
+		text-align:center;
+	}
+	p, li {
+		font-size:$basefontsize*1.2 !important;
+	}
+    .navbar img {
+		height:80px;
+	}
+	section img {
+        margin:0 auto;
+    }
+ }
+@media (min-width: 990px) {
+    /*.heading {
+        position:absolute;
+        top:500px;
+        left:100px;
+		h1, p {
+			color:#fff;		
+		}
+		h1 {
+			font-size:$basefontsize*3;
+		}
+	}*/
+	.designedBy {
+		float:right;
+	}
+}
+@media (min-width: 1200px) {
+    /*.cover .cover-image {
+        background-size:1200px auto !important;
+     }
+	.heading h1 {
+			font-size:$basefontsize*4;
+    }*/
+    .designedBy {
+        position:absolute;
+        bottom:-130px;
+    }
+}

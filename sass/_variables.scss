@@ -1,0 +1,13 @@
+// fonts
+$headingFontFamily: 'Playfair Display', serif;
+$standardFontFamily: 'Open Sans', sans-serif;
+$fontColour:#333; 
+$basefontsize:16px;
+
+//colours
+$primaryColour:#6EBB46; // green
+$secondaryColour:#E0CA95; // sand
+$emphasisColour:darken($primaryColour, 15%);  // dark green
+
+$shdw: 0 2px 8px rgba(0, 0, 0, .6);
+$textshdw: 0 2px 8px rgba(0, 0, 0, .6);
